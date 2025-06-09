@@ -14,8 +14,8 @@ class TestRegistration:
         driver.get(page_url)
 
         # Загрузка кнопки "Вход и регистрация" на главной странице
-        WebDriverWait(driver, 5).until(ec.element_to_be_clickable(RL.POP_BUTTON_REGISTRATION))
-        driver.find_element(*RL.POP_BUTTON_REGISTRATION).click()
+        WebDriverWait(driver, 5).until(ec.element_to_be_clickable(RL.PAGE_BUTTON_REGISTRATION))
+        driver.find_element(*RL.PAGE_BUTTON_REGISTRATION).click()
         
         # Загурзка кнопки "Нет аккаунта" в форме авторизации
         WebDriverWait(driver, 5).until(ec.element_to_be_clickable(RL.POP_BUTTON_NO_ACCOUNT))
@@ -47,8 +47,8 @@ class TestRegistration:
         driver.get(page_url)
 
         # Загрузка кнопки "Вход и регистрация" на главной странице
-        WebDriverWait(driver, 5).until(ec.element_to_be_clickable(RL.POP_BUTTON_REGISTRATION))
-        driver.find_element(*RL.POP_BUTTON_REGISTRATION).click()
+        WebDriverWait(driver, 5).until(ec.element_to_be_clickable(RL.PAGE_BUTTON_REGISTRATION))
+        driver.find_element(*RL.PAGE_BUTTON_REGISTRATION).click()
         
         # Загурзка кнопки "Нет аккаунта" в форме авторизации
         WebDriverWait(driver, 5).until(ec.element_to_be_clickable(RL.POP_BUTTON_NO_ACCOUNT))
@@ -78,8 +78,8 @@ class TestRegistration:
         driver.get(page_url)
 
         # Загрузка кнопки "Вход и регистрация" на главной странице
-        WebDriverWait(driver, 5).until(ec.element_to_be_clickable(RL.POP_BUTTON_REGISTRATION))
-        driver.find_element(*RL.POP_BUTTON_REGISTRATION).click()
+        WebDriverWait(driver, 5).until(ec.element_to_be_clickable(RL.PAGE_BUTTON_REGISTRATION))
+        driver.find_element(*RL.PAGE_BUTTON_REGISTRATION).click()
         
         # Загурзка кнопки "Нет аккаунта" в форме авторизации
         WebDriverWait(driver, 5).until(ec.element_to_be_clickable(RL.POP_BUTTON_NO_ACCOUNT))
