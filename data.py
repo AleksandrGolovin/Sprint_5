@@ -15,3 +15,8 @@ INVALID_EMAILS = [
     ' @ .',
     '@ . '
 ]
+
+REGISTERED_USER = {
+    'email': 'ya@ne.ya',
+    'password': '1111'
+}

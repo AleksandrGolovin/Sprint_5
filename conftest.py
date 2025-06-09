@@ -4,12 +4,14 @@ import pytest
 from selenium import webdriver
 
 
+# Инициализация драйвера Chrome
 @pytest.fixture
 def driver():
     driver_instance = webdriver.Chrome()
     yield driver_instance
     driver_instance.quit()
 
+# Получить уникальные логин-пароль
 @pytest.fixture
 def unique_credentials():
     username = ''.join(random.choices(string.ascii_lowercase, k=15))
