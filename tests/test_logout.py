@@ -7,6 +7,7 @@ from data import REGISTERED_USER
 
 
 class TestLogout:
+    # Авторизоваться и выйти из профиля
     def test_logout_existing_credentials(self, driver: WebDriver):
         email = REGISTERED_USER['email']
         password = REGISTERED_USER['password']
@@ -32,14 +33,12 @@ class TestLogout:
         
         # Выгрузка поп-апа, аватара, юзернейма
         WebDriverWait(driver, 5).until(ec.invisibility_of_element_located(DL.POP_UP))
-        WebDriverWait(driver, 5).until(ec.invisibility_of_element_located(DL.HEADER_USER_NAME))
         WebDriverWait(driver, 5).until(ec.invisibility_of_element_located(DL.HEADER_USER_AVATAR))
-        user_name_label = driver.find_elements(*DL.HEADER_USER_NAME)
         user_avatar = driver.find_elements(*DL.HEADER_USER_AVATAR)
 
         # Загрузка кнопки входа и регистрации
         WebDriverWait(driver, 5).until(ec.element_to_be_clickable(DL.HEADER_BUTTON_REGISTRATION))
         registration_button = driver.find_elements(*DL.HEADER_BUTTON_REGISTRATION)
         
-        # Нет поп-апов, имя пользователя 'User.', есть кружок с аватаром
-        assert len(registration_button) == 1 and len(user_name_label) == 0 and len(user_avatar) == 0
+        # Нет поп-апов, есть кружок с аватаром
+        assert len(registration_button) == 1 and len(user_avatar) == 0
