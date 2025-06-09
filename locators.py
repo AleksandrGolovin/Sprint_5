@@ -24,4 +24,21 @@ class DeskLocators:
     CREATE_INPUT_NAME = By.XPATH, ".//div[@class='createListingPage_createListingPageStyle__U-MJJ']//input[@name='name']"
     CREATE_INPUT_PRICE = By.XPATH, ".//div[@class='createListingPage_createListingPageStyle__U-MJJ']//input[@name='price']"
     CREATE_TEXTAREA_DESCRIPTION = By.XPATH, ".//div[@class='createListingPage_createListingPageStyle__U-MJJ']//textarea[@name='description']"
-    
+    CREATE_DROPDOWN_INPUT_CITY_ = By.XPATH, ".//div[@class='dropDownMenu_dropMenu__sBxhz']//input[@name='city']"
+    CREATE_DROPDOWN_CITY_ARROW = By.XPATH, ".//div[@class='dropDownMenu_dropMenu__sBxhz']//input[@name='city']/..//button[contains(@class,'dropDownMenu_arrow')]"
+    CREATE_DROPDOWN_CITY_BUTTONS = By.XPATH, ".//div[@class='dropDownMenu_dropMenu__sBxhz']//input[@name='city']/../..//button[@class='dropDownMenu_btn__o8ARs dropDownMenu_noDefault__wSKsP']"
+    CREATE_DROPDOWN_INPUT_CATEGORY_ = By.XPATH, ".//div[@class='dropDownMenu_dropMenu__sBxhz']//input[@name='category']"
+    CREATE_DROPDOWN_CATEGORY_ARROW = By.XPATH, ".//div[@class='dropDownMenu_dropMenu__sBxhz']//input[@name='category']/..//button[contains(@class,'dropDownMenu_arrow')]"
+    CREATE_DROPDOWN_CATEGORY_BUTTONS = By.XPATH, ".//div[@class='dropDownMenu_dropMenu__sBxhz']//input[@name='category']/../..//button[@class='dropDownMenu_btn__o8ARs dropDownMenu_noDefault__wSKsP']"
+    CREATE_FIELDSET_CONDITIONS_ACTIVE = By.XPATH, ".//fieldset[contains(@class, 'createListing_inputRadio')]//div[@class='radioUnput_inputActive__eC-HY']"
+    CREATE_FIELDSET_CONDITIONS_REGULAR = By.XPATH, ".//fieldset[contains(@class, 'createListing_inputRadio')]//div[@class='radioUnput_inputRegular__FbVbr']"
+    CREATE_BUTTON_PUBLISH = By.XPATH, ".//button[@type='submit' and text()='Опубликовать']"
+
+    PROFILE_CARD_DESCRIPTION_LAST = By.XPATH, "(.//div[@class='card']/div[@class='description'])[last()]"
+    PROFILE_CARD_NAME = By.XPATH, ".//div[@class='about']/h2"
+    PROFILE_CARD_CITY = By.XPATH, ".//div[@class='about']/h3"
+    PROFILE_CARD_PRICE = By.XPATH, ".//div[@class='price']/h2"
+    PROFILE_CARD_BUTTON_NEXT_ACTIVE = By.XPATH, ".//button[@class='arrowButton arrowButton--right undefined' and not(@disabled)]"
+    PROFILE_CARD_BUTTON_NEXT = By.XPATH, ".//button[@class='arrowButton arrowButton--right undefined']"
+
+    HOMEPAGE = By.XPATH, ".//div[contains(@class, 'homePage_homepageStyle')]"

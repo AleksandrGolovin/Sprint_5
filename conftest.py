@@ -30,3 +30,12 @@ def unique_credentials():
     }
     
     yield credentials
+
+@pytest.fixture
+def random_entity():
+    entity = {
+            "name": f"Ветка {random.randrange(20, 50)} см.",
+            "description": "Прекрасный образец дерева благородной породы",
+            "price": random.randrange(100, 10000)
+        }
+    yield entity
