@@ -31,6 +31,7 @@ class TestRegistration:
         driver.find_element(*DL.POP_BUTTON_CREATE_ACCOUNT).click()
         
         # Загрузка аватара и имени на главной странице
+        WebDriverWait(driver, 5).until(ec.invisibility_of_element_located(DL.POP_UP))
         WebDriverWait(driver, 5).until(ec.visibility_of_element_located(DL.HEADER_USER_NAME))
         WebDriverWait(driver, 5).until(ec.visibility_of_element_located(DL.HEADER_USER_AVATAR))
         user_name = driver.find_element(*DL.HEADER_USER_NAME).text

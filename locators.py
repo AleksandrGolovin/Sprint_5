@@ -14,5 +14,6 @@ class DeskLocators:
     POP_BUTTON_ENTER = By.XPATH, ".//form[@class='popUp_shell__LuyqR']//button[text()='Войти']"
     
     HEADER_BUTTON_REGISTRATION = By.XPATH, ".//div[@class='header_flexRow__Xdqv1']/button[text()='Вход и регистрация']"
+    HEADER_BUTTON_LOGOUT = By.XPATH, ".//div[@class='header_flexRow__Xdqv1']//button[text()='Выйти']"
     HEADER_USER_NAME = By.XPATH, ".//div[@class='header_flexRow__Xdqv1']//h3[@class='profileText name']"
     HEADER_USER_AVATAR = By.XPATH, ".//div[@class='header_flexRow__Xdqv1']//button[@class='circleSmall']"

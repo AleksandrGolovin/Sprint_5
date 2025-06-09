@@ -2,12 +2,15 @@ import random
 import string
 import pytest
 from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
 
 
 # Инициализация драйвера Chrome
 @pytest.fixture
 def driver():
-    driver_instance = webdriver.Chrome()
+    chrome_options = Options()
+    chrome_options.add_argument("--incognito")
+    driver_instance = webdriver.Chrome(options=chrome_options)
     yield driver_instance
     driver_instance.quit()
 

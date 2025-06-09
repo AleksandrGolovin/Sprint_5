@@ -6,8 +6,8 @@ from locators import DeskLocators as DL
 from data import REGISTERED_USER
 
 
-class TestLogin:
-    def test_login_existing_credentials(self, driver: WebDriver):
+class TestLogout:
+    def test_logout_existing_credentials(self, driver: WebDriver):
         email = REGISTERED_USER['email']
         password = REGISTERED_USER['password']
         page_url = 'https://qa-desk.stand.praktikum-services.ru'
@@ -26,14 +26,20 @@ class TestLogin:
         WebDriverWait(driver, 5).until(ec.element_to_be_clickable(DL.POP_BUTTON_ENTER))
         driver.find_element(*DL.POP_BUTTON_ENTER).click()
         
-
-
-        # Загрузка аватара и имени на главной странице
-        WebDriverWait(driver, 5).until(ec.visibility_of_element_located(DL.HEADER_USER_NAME))
-        WebDriverWait(driver, 5).until(ec.visibility_of_element_located(DL.HEADER_USER_AVATAR))
-        user_name = driver.find_element(*DL.HEADER_USER_NAME).text
+        # Загрузка кнопки "Выход" на главной странице
+        WebDriverWait(driver, 5).until(ec.element_to_be_clickable(DL.HEADER_BUTTON_LOGOUT))
+        driver.find_element(*DL.HEADER_BUTTON_LOGOUT).click()
+        
+        # Выгрузка поп-апа, аватара, юзернейма
+        WebDriverWait(driver, 5).until(ec.invisibility_of_element_located(DL.POP_UP))
+        WebDriverWait(driver, 5).until(ec.invisibility_of_element_located(DL.HEADER_USER_NAME))
+        WebDriverWait(driver, 5).until(ec.invisibility_of_element_located(DL.HEADER_USER_AVATAR))
+        user_name_label = driver.find_elements(*DL.HEADER_USER_NAME)
         user_avatar = driver.find_elements(*DL.HEADER_USER_AVATAR)
-        pop_up = driver.find_elements(*DL.POP_UP)  # Поп-апы есть?
 
+        # Загрузка кнопки входа и регистрации
+        WebDriverWait(driver, 5).until(ec.element_to_be_clickable(DL.HEADER_BUTTON_REGISTRATION))
+        registration_button = driver.find_elements(*DL.HEADER_BUTTON_REGISTRATION)
+        
         # Нет поп-апов, имя пользователя 'User.', есть кружок с аватаром
-        assert len(pop_up) == 0 and user_name == 'User.' and len(user_avatar) != 0
+        assert len(registration_button) == 1 and len(user_name_label) == 0 and len(user_avatar) == 0
