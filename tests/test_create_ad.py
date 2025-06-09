@@ -96,6 +96,7 @@ class TestCreateAd:
         WebDriverWait(driver, 5).until(ec.element_to_be_clickable(DL.PROFILE_CARD_BUTTON_NEXT))
         not_last_page = len(driver.find_elements(*DL.PROFILE_CARD_BUTTON_NEXT_ACTIVE)) > 0
         while not_last_page:
+            WebDriverWait(driver, 5).until(ec.element_to_be_clickable(DL.PROFILE_CARD_BUTTON_NEXT_ACTIVE))
             driver.find_element(*DL.PROFILE_CARD_BUTTON_NEXT_ACTIVE).click()
             WebDriverWait(driver, 5).until(ec.visibility_of_element_located(DL.PROFILE_CARD_BUTTON_NEXT))
             not_last_page = len(driver.find_elements(*DL.PROFILE_CARD_BUTTON_NEXT_ACTIVE)) > 0
